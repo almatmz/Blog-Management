@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogs Management</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <h1 class="logo">Blog<span>Manage</span></h1>
+      </div>
+    </nav>
+
+    <main class="container-fluid main-layout">
+      <aside class="sidebar">
+        <div class="card sticky-form">
+          <h2 id="form-title">Create New Post</h2>
+          <form id="blog-form">
+            <input type="hidden" id="blog-id" />
+
+            <div class="field">
+              <label for="title">Post Title</label>
+              <input
+                type="text"
+                id="title"
+                placeholder="Enter title..."
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="author">Author Name</label>
+              <input type="text" id="author" placeholder="Anonymous" />
+            </div>
+
+            <div class="field">
+              <label for="body">Content</label>
+              <textarea
+                id="body"
+                rows="8"
+                placeholder="Write your story..."
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" id="submit-btn" class="btn btn-primary">
+                Publish Post
+              </button>
+              <button
+                type="button"
+                id="cancel-btn"
+                class="btn btn-muted"
+                style="display: none"
+              >
+                Cancel Edit
+              </button>
+            </div>
+          </form>
+        </div>
+      </aside>
+
+      <section class="feed">
+        <div class="feed-header">
+          <h2>Recent Stories</h2>
+          <button onclick="fetchBlogs()" class="btn btn-outline">
+            Refresh Feed
+          </button>
+        </div>
+        <div id="blog-list" class="blog-grid"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
