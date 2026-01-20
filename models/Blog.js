@@ -5,7 +5,7 @@ const blogSchema = new mongoose.Schema(
     body: { type: String, required: true },
     author: { type: String, default: " Anonymous" },
   },
-  { timestamps: true }
+  { timestamps: true, versionKey: false },
 );
 
 module.exports = mongoose.model("Blog", blogSchema);
